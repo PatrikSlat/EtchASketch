@@ -28,13 +28,9 @@ body{
   height: 500px;
   width: 500px;
   border: 1px solid black;
-  flex-direction: row;
-}
-
-.column{
-  display: flex;
   flex-direction: column;
 }
+
 
 
 

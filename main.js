@@ -16,22 +16,15 @@ buttonCreate.addEventListener("click", () => {
 function createBoard(divSize, sizePromt){
     let board = document.querySelector(".board");
     for(let i = 1; i <= sizePromt; i++){
-        const boardColumn = document.createElement("div");
-        boardColumn.style["height"] = `${divSize}px`;
-        boardColumn.style["width"] = `${divSize}px`;
-        boardColumn.style["border"] = "1px solid black";
-        boardColumn.setAttribute("class", "column");
-        boardColumn.setAttribute("id", `column${i}`);
-        board.appendChild(boardColumn);
+        const boardRow = document.createElement("div");
+        boardRow.style["height"] = `${divSize}px`;
+        boardRow.style["width"] = `${divSize}px`;
+        boardRow.style["border"] = "1px solid black";
+        boardRow.setAttribute("class", "roww"); // Consider renaming the class to "row" if you're changing to a row-oriented approach
+        boardRow.setAttribute("id", `roww${i}`); // Consider renaming the ID prefix to "row" for consistency
+        board.appendChild(boardRow);
         for(let j = 1; j <= sizePromt; j++){
-            const boardRow = document.createElement("div");
-            const CurrentBoardColumn = document.querySelector(`#column${i}`);
-            boardRow.style["height"] = `${divSize}px`;
-            boardRow.style["width"] = `${divSize}px`;
-            boardRow.style["border"] = "1px solid black";
-            boardRow.setAttribute("class", "row");
-            boardRow.setAttribute("id", `row${j}`);
-            CurrentBoardColumn.appendChild(boardRow);
+
         }
     }
 }
