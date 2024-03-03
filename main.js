@@ -1,5 +1,6 @@
 let buttonCreate = document.querySelector("#create");
 let buttonReset = document.querySelector("#reset");
+let board = document.querySelector(".board");
 
 buttonCreate.addEventListener("click", () => {
     const sizePromt = parseInt(prompt("How large should the grid be (nxn): "));
@@ -19,6 +20,7 @@ function createBoard(divSize, sizePromt){
     for(let i = 1; i <= sizePromt; i++){
         const boardRow = document.createElement("div");
         boardRow.setAttribute("class", "roww"); 
+        boardRow.setAttribute("id", `row${i}`);
         board.appendChild(boardRow);
         for(let j = 1; j <= sizePromt; j++){
             const boardColumn = document.createElement("div");
@@ -26,7 +28,11 @@ function createBoard(divSize, sizePromt){
             boardColumn.style["width"] = `${divSize}px`;
             boardColumn.style["border"] = "1px solid black";
             boardColumn.setAttribute("class", "column"); 
+            boardColumn.setAttribute("id", `column${j}`); 
             boardRow.appendChild(boardColumn);
+            boardColumn.addEventListener("mouseover", () => {
+                boardColumn.style["background"] = "black"; 
+            });
         }
     }
 }
