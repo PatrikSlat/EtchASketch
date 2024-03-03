@@ -37,3 +37,6 @@ function createBoard(divSize, sizePromt){
     }
 }
 
+buttonReset.addEventListener("click", () => {
+    board.innerHTML = "";
+});
